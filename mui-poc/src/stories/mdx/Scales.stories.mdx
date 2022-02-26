@@ -1,44 +1,44 @@
 import { Meta } from "@storybook/addon-docs";
 import { colors } from "../../themes/light/colors";
+import { getScale } from "../../themes/scale";
 
-export const ColorBlock = ({ backgroundColor, color }) => {
+export const ScaleBlock = ({ size }) => {
   const blockStyle = {
-    backgroundColor: backgroundColor,
-    padding: "1rem",
-    color: color,
-    border: `0.01rem solid ${color}`,
+    backgroundColor: "#444444",
+    height: getScale(size),
+    width: getScale(size),
+    display: "inline-block",
+    marginRight: getScale(size),
   };
-  return <div style={blockStyle}>{backgroundColor}</div>;
+  return <div style={blockStyle} />;
 };
 
 <Meta title="Styleguide/Scales" />
 
-# Colors
+# Scales
 
-## Black
+**Root**
+: 10px
 
-##### Dark
+**Unit**
+: rem
 
-<ColorBlock backgroundColor={colors.black.dark} color={colors.white.light} />
+**Increments**
+: 0.8rem
 
-##### Regular
+**Min Size**
+: 0.01rem
 
-<ColorBlock backgroundColor={colors.black.regular} color={colors.white.light} />
+**Max Size**
+: 6.4rem
 
-##### Light
+### Basic Scale
 
-<ColorBlock backgroundColor={colors.black.light} color={colors.white.light} />
-
-## White
-
-##### Dark
-
-<ColorBlock backgroundColor={colors.white.dark} color={colors.black.dark} />
-
-##### Regular
-
-<ColorBlock backgroundColor={colors.white.regular} color={colors.black.dark} />
-
-##### Light
-
-<ColorBlock backgroundColor={colors.white.light} color={colors.black.dark} />
+<ScaleBlock size={1} />
+<ScaleBlock size={2} />
+<ScaleBlock size={3} />
+<ScaleBlock size={4} />
+<ScaleBlock size={5} />
+<ScaleBlock size={6} />
+<ScaleBlock size={7} />
+<ScaleBlock size={8} />
