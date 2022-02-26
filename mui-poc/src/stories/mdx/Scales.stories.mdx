@@ -1,0 +1,44 @@
+import { Meta } from "@storybook/addon-docs";
+import { colors } from "../../themes/light/colors";
+import { getScale } from "../../themes/scale";
+
+export const ScaleBlock = ({ size }) => {
+  const blockStyle = {
+    backgroundColor: "#444444",
+    height: getScale(size),
+    width: getScale(size),
+    display: "inline-block",
+    marginRight: getScale(size),
+  };
+  return <div style={blockStyle} />;
+};
+
+<Meta title="Styleguide/Scales" />
+
+# Scales
+
+**Root**
+: 10px
+
+**Unit**
+: rem
+
+**Increments**
+: 0.8rem
+
+**Min Size**
+: 0.01rem
+
+**Max Size**
+: 6.4rem
+
+### Basic Scale
+
+<ScaleBlock size={1} />
+<ScaleBlock size={2} />
+<ScaleBlock size={3} />
+<ScaleBlock size={4} />
+<ScaleBlock size={5} />
+<ScaleBlock size={6} />
+<ScaleBlock size={7} />
+<ScaleBlock size={8} />
