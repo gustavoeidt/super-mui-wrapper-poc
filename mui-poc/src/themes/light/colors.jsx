@@ -5,8 +5,8 @@ export const colors = {
     light: "#444444",
   },
   white: {
-    dark: "#FAFAFA",
-    regular: "#FCFCFC",
+    dark: "#F0F0F0",
+    regular: "#F7F7F7",
     light: "#FFFFFF",
   },
 };
