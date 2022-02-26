@@ -1,0 +1,43 @@
+import { Meta } from "@storybook/addon-docs";
+import { colors } from "../../themes/light/colors";
+
+export const ColorBlock = ({ backgroundColor }) => {
+  const blockStyle = {
+    backgroundColor: backgroundColor,
+    padding: "1rem",
+    color: "white",
+  };
+  return <div style={blockStyle}>color: {backgroundColor}</div>;
+};
+
+<Meta title="Styleguide/Colors" />
+
+# Colors
+
+## Black
+
+##### Dark
+
+<ColorBlock backgroundColor={colors.black.dark} />
+
+##### Regular
+
+<ColorBlock backgroundColor={colors.black.regular} />
+
+##### Light
+
+<ColorBlock backgroundColor={colors.black.light} />
+
+## White
+
+##### Dark
+
+<ColorBlock backgroundColor={colors.white.dark} />
+
+##### Regular
+
+<ColorBlock backgroundColor={colors.white.regular} />
+
+##### Light
+
+<ColorBlock backgroundColor={colors.white.light} />
