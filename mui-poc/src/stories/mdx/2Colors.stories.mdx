@@ -27,6 +27,31 @@ export const ColorBlock = ({ backgroundColor, color, name }) => {
   );
 };
 
+export const ColorBlocks = ({ colorData, name }) => {
+  return (
+    <>
+      <h2>{name}</h2>
+      <div class="flex">
+        <ColorBlock
+          backgroundColor={colorData.dark}
+          color={colors.black.dark}
+          name="Dark"
+        />
+        <ColorBlock
+          backgroundColor={colorData.regular}
+          color={colors.black.dark}
+          name="Regular"
+        />
+        <ColorBlock
+          backgroundColor={colorData.light}
+          color={colors.black.dark}
+          name="Light"
+        />
+      </div>
+    </>
+  );
+};
+
 <Meta title="Styleguide/Colors" />
 
 <style>
@@ -59,162 +84,11 @@ Basic usage in css passing the value from the JSON object:
 }
 ```
 
-## Light Salmon
-
-<div class="flex">
-  <ColorBlock
-    backgroundColor={colors.lightSalmon.dark}
-    color={colors.black.dark}
-    name="Dark"
-  />
-  <ColorBlock
-    backgroundColor={colors.lightSalmon.regular}
-    color={colors.black.dark}
-    name="Regular"
-  />
-  <ColorBlock
-    backgroundColor={colors.lightSalmon.light}
-    color={colors.black.dark}
-    name="Light"
-  />
-</div>
-
-## Deep Champanhe
-
-<div class="flex">
-  <ColorBlock
-    backgroundColor={colors.deepChampanhe.dark}
-    color={colors.black.dark}
-    name="Dark"
-  />
-  <ColorBlock
-    backgroundColor={colors.deepChampanhe.regular}
-    color={colors.black.dark}
-    name="Regular"
-  />
-  <ColorBlock
-    backgroundColor={colors.deepChampanhe.light}
-    color={colors.black.dark}
-    name="Light"
-  />
-</div>
-
-## Key Lime
-
-<div class="flex">
-  <ColorBlock
-    backgroundColor={colors.keyLime.dark}
-    color={colors.black.dark}
-    name="Dark"
-  />
-  <ColorBlock
-    backgroundColor={colors.keyLime.regular}
-    color={colors.black.dark}
-    name="Regular"
-  />
-  <ColorBlock
-    backgroundColor={colors.keyLime.light}
-    color={colors.black.dark}
-    name="Light"
-  />
-</div>
-
-## Green Sheen
-
-<div class="flex">
-  <ColorBlock
-    backgroundColor={colors.greenSheen.dark}
-    color={colors.black.dark}
-    name="Dark"
-  />
-  <ColorBlock
-    backgroundColor={colors.greenSheen.regular}
-    color={colors.black.dark}
-    name="Regular"
-  />
-  <ColorBlock
-    backgroundColor={colors.greenSheen.light}
-    color={colors.black.dark}
-    name="Light"
-  />
-</div>
-
-## Ebony
-
-<div class="flex">
-  <ColorBlock
-    backgroundColor={colors.ebony.dark}
-    color={colors.black.dark}
-    name="Dark"
-  />
-  <ColorBlock
-    backgroundColor={colors.ebony.regular}
-    color={colors.black.dark}
-    name="Regular"
-  />
-  <ColorBlock
-    backgroundColor={colors.ebony.light}
-    color={colors.black.dark}
-    name="Light"
-  />
-</div>
-
-## Black
-
-<div className="flex">
-  <ColorBlock
-    backgroundColor={colors.black.dark}
-    color={colors.white.light}
-    name="Dark"
-  />
-  <ColorBlock
-    backgroundColor={colors.black.regular}
-    color={colors.white.light}
-    name="Regular"
-  />
-  <ColorBlock
-    backgroundColor={colors.black.light}
-    color={colors.white.light}
-    name="Light"
-  />
-</div>
-
-## grey
-
-<div class="flex">
-  <ColorBlock
-    backgroundColor={colors.grey.dark}
-    color={colors.black.dark}
-    name="Dark"
-  />
-  <ColorBlock
-    backgroundColor={colors.grey.regular}
-    color={colors.black.dark}
-    name="Regular"
-  />
-  <ColorBlock
-    backgroundColor={colors.grey.light}
-    color={colors.black.dark}
-    name="Light"
-  />
-</div>
-
-## White
-
-<div class="flex">
-  <ColorBlock
-    backgroundColor={colors.white.dark}
-    color={colors.black.dark}
-    name="Dark"
-  />
-  <ColorBlock
-    backgroundColor={colors.white.regular}
-    color={colors.black.dark}
-    name="Regular"
-  />
-  <ColorBlock
-    backgroundColor={colors.white.light}
-    color={colors.black.dark}
-    name="Light"
-  />
-</div>
+<ColorBlocks colorData={colors.lightSalmon} name="Light Salmon" />
+<ColorBlocks colorData={colors.deepChampanhe} name="Deep Champanhe" />
+<ColorBlocks colorData={colors.keyLime} name="Key Lime" />
+<ColorBlocks colorData={colors.greenSheen} name="Green Sheen" />
+<ColorBlocks colorData={colors.ebony} name="Ebony" />
+<ColorBlocks colorData={colors.black} name="Black" />
+<ColorBlocks colorData={colors.grey} name="Grey" />
+<ColorBlocks colorData={colors.white} name="White" />
