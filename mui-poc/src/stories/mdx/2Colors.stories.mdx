@@ -1,0 +1,93 @@
+import { Meta } from "@storybook/addon-docs";
+import { colors } from "../../themes/colors";
+
+export const ColorBlock = ({ backgroundColor, color, name }) => {
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(`hsl(${backgroundColor})`);
+  };
+  const blockStyle = {
+    backgroundColor: `hsl(${backgroundColor})`,
+    padding: "1rem",
+    color: `hsl(${color})`,
+    border: `0.01rem solid hsl(${color})`,
+    cursor: "pointer",
+  };
+  return (
+    <div className="color-item" title="Click to copy color hsl value">
+      <h5>{name}</h5>
+      <div
+        className="color-block"
+        style={blockStyle}
+        onClick={copyToClipboard}
+      />
+      <p>
+        <strong>HSL:</strong> {backgroundColor}
+      </p>
+    </div>
+  );
+};
+
+export const ColorBlocks = ({ colorData, name }) => {
+  return (
+    <>
+      <h2>{name}</h2>
+      <div class="flex">
+        <ColorBlock
+          backgroundColor={colorData.dark}
+          color={colors.black.dark}
+          name="Dark"
+        />
+        <ColorBlock
+          backgroundColor={colorData.regular}
+          color={colors.black.dark}
+          name="Regular"
+        />
+        <ColorBlock
+          backgroundColor={colorData.light}
+          color={colors.black.dark}
+          name="Light"
+        />
+      </div>
+    </>
+  );
+};
+
+<Meta title="Styleguide/Colors" />
+
+<style>
+  {`
+  .color-item {
+    flex-grow: 1;
+  }
+  .color-block {
+    min-height: 10rem;
+  }
+  `}
+</style>
+
+# Colors
+
+We use HSL (Hue, Saturation, Lightness) as our standard color format. Using HSL over Hex makes it a lot easier to work with opacity (alpha channel) and tonal variation for the color without changing the Hue.
+
+The JSON file containing all colors and variations can be found here. Color values in this file can't be added or modifyied by any means without the approval of the head of the design team.
+
+```
+src/themes/colors.jsx
+```
+
+Basic usage in css passing the value from the JSON object:
+
+```css
+.new-class {
+  color: hsl(${color.black.dark});
+}
+```
+
+<ColorBlocks colorData={colors.lightSalmon} name="Light Salmon" />
+<ColorBlocks colorData={colors.deepChampanhe} name="Deep Champanhe" />
+<ColorBlocks colorData={colors.keyLime} name="Key Lime" />
+<ColorBlocks colorData={colors.greenSheen} name="Green Sheen" />
+<ColorBlocks colorData={colors.ebony} name="Ebony" />
+<ColorBlocks colorData={colors.black} name="Black" />
+<ColorBlocks colorData={colors.grey} name="Grey" />
+<ColorBlocks colorData={colors.white} name="White" />
